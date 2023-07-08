@@ -1,7 +1,13 @@
 function canal() {
-    console.log('CFB Cursos')
+    let n1 = 10.5
+    let n2 = 2
+    let res = n1 * n2
+    if (res % 2 == 0 ) {
+        return 'Par'
+    } else {
+        return 'Ímpar'
+    }
 }
 
-canal()
-canal()
-canal()
+let res = canal()
+console.log(res)

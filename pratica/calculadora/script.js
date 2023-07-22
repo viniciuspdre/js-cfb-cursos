@@ -1,11 +1,8 @@
-let val = [...document.querySelectorAll('.valores')]
-let tela = document.getElementsByClassName('tela')
+let val = [...document.querySelectorAll('.valores, .botoes')]
+let tela = document.querySelector('#tela')
+let somar = document.querySelector('#soma')
+console.log(somar)
 
-val.map((e) => {
-    // console.log(e.innerHTML)
-    e.addEventListener('click', (evt) => {
-        let v = evt.target
-        console.log(v.innerHTML)
-        tela.innerText = v.innerHTML
-    })
-})
+function pegaValor(n) {
+    
+}

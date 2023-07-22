@@ -26,7 +26,7 @@ main {
     flex-direction: column;
 }
 
-.tela {
+#tela {
     background-color: rgba(37, 110, 37, 0.644);
     width: 400px;
     height: 90px;

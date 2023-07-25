@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmética</title>
+</head>
+<body>
+    <input type="number" name="valores" id="n1" class="caixa">
+    <input type="number" name="valores" id="n2" class="caixa">
+    <button id="operar">Somar</button>
+    <div id="resultado"></div>
+    <script>
+        "use strict"
+        let x = document.querySelector('#n1')
+        let y = document.querySelector('#n2')
+        let res = document.querySelector('#resultado')
+        let log = document.querySelector('#operar')
+
+        log.addEventListener('click', () => {
+            let r = Number(x.value) + Number(y.value)
+            console.log(r)
+            res.innerHTML = r
+        })
+    </script>
+</body>
+</html>

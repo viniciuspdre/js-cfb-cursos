@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equação do segundo grau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <main>
+            <div id="valores">
+                <div>
+                    <label for="a">Informe o valor de A:</label>
+                    <input type="number" name="a" id="a">
+                </div><div>
+                    
+                    <label for="b">Informe o valor de B:</label>
+                    <input type="number" name="b" id="b">
+                </div>
+                <div>
+                    <label for="c">Informe o valor de C:</label>
+                    <input type="number" name="c" id="c">
+                </div>
+            </div>
+            <div id="formatacao">
+                <span>A sua equação formatada é:</span>
+                <div id="equacaoFormat"></div>
+            </div>
+            <div dir="resultados">
+                <span>Valor do Delta(&Delta;):</span>
+                <div class="resultadosEquacao"></div>
+                <span>Valor do x&apos;:</span>
+                <div class="resultadosEquacao"></div>
+                <span>Valor do x&apos;&apos;:</span>
+                <div class="resultadosEquacao"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

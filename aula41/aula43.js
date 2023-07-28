@@ -4,12 +4,16 @@ const cursos = ['HTML', 'CSS', 'Javascript', 'PHP', 'React', 'MySQL', 'ReactNati
 const btnRemoverCurso = document.querySelector('#btnRemoverCurso')
 let nomeCurso = document.querySelector('#nomeCurso')
 const btnAdicionarNovoCurso = document.querySelector('#btnAdicionarNovoCurso')
+const btnAdicionarAntes = document.querySelector('#btnAdicionarAntes')
+const btnAdicionarDepois = document.querySelector('#btnAdicionarDepois')
 
-cursos.map((e, i) => {
+let indice = 0
+
+const criarNovoCurso = (curso) => {
     const novoElemento = document.createElement("div")
-    novoElemento.setAttribute('id', 'c'+i)
+    novoElemento.setAttribute('id', 'c'+indice)
     novoElemento.setAttribute('class', 'curso c1')
-    novoElemento.innerHTML = e
+    novoElemento.innerHTML = curso
 
     const comandos = document.createElement('div')
     comandos.setAttribute('class', 'comandos')
@@ -20,7 +24,12 @@ cursos.map((e, i) => {
 
     comandos.appendChild(rb)
     novoElemento.appendChild(comandos)
+    return novoElemento
+}
+cursos.map((e) => {
+    const novoElemento = criarNovoCurso(e)
     caixaCursos.appendChild(novoElemento)
+    indice++
 })
 
 const opcaoSelecionado = () => {
@@ -51,6 +60,32 @@ btnRemoverCurso.addEventListener('click', ((evt) => {
     }
 }))
 
-btnAdicionarNovoCurso.addEventListener('click' ((evt) => {
+btnAdicionarAntes.addEventListener('click', (evt) => {
+    const radioSelecionado = opcaoSelecionado()
+    try {
+        const cursoSelecionado = radioSelecionado.parentNode.parentNode
+        // const novoCurso = criarNovoCurso(nomeCurso.value)
+        if(nomeCurso.value.length == 0){
+            alert('[ERRO]Insira um curso!')
+        }else{
+        caixaCursos.insertBefore(criarNovoCurso(nomeCurso.value), cursoSelecionado)
+        }
+    }catch(ex){
+        alert('Selecione um curso.')
+    }
+})
 
-}))
+btnAdicionarDepois.addEventListener('click', (evt) => {
+    const radioSelecionado = opcaoSelecionado()
+    try {
+        const cursoSelecionado = radioSelecionado.parentNode.parentNode.nextSibling
+        if (nomeCurso.value.length == 0){
+            alert('[ERRO]Insira um curso!')
+        }else{
+        const novoCurso = criarNovoCurso(nomeCurso.value)
+        caixaCursos.insertBefore(novoCurso, cursoSelecionado)
+        }
+    }catch(ex){
+        alert('Selecione um curso.')
+    }
+})

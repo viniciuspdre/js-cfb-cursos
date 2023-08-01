@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 1em;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+
+        }
+        main {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            background-color: #e9b167;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: .5em;
+            border-radius: 1em;
+        }
+        input {
+            width: 60%;
+            height: 3em;
+            border-radius: 1em;
+            padding: 1em;
+            border: none;
+        }
+        button {
+            width: 60%;
+            height: 2em;
+            border-radius: 1em;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgrey;
+            transition: .2s;
+            transform: scale(1.05, 1.05);
+        }
+        #res {
+            background-color: #e9b167;
+            width: 300px;
+            height: 100px;
+            border-radius: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input type="number" name="numero" id="n1">
+        <input type="number" name="numero" id="n2">
+        <button id="soma">Somar</button><button id="sub">Subtrair</button><button id="mult">Multiplicar</button><button id="div">Dividir</button>
+    </main>
+    <div id="res">
+        <h1>Resultado</h1>
+        <p id="resultado"></p>
+    </div>
+    <script src="arrays.js"></script>
+</body>
+</html>
